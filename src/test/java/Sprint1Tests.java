@@ -1,20 +1,20 @@
+import Pages.LandingPage;
 import Pages.LoginPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+public class Sprint1Tests extends BaseTest {
+    //Story: Create a new playlist
 
-public class LoginTests extends BaseTest {
     @Test
-    public void validLoginTest() {
+    public void createANewPlaylist() {
 
         LoginPage loginPage = new LoginPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
         loginPage.logIn("chelsea.laurenson@testpro.io", "KoelQ@!!");
         //loginPage.isUserLoggedIn();
         System.out.println("Logged In Successfully");
-
+        landingPage.clickAddPlaylistPlusButton();
     }
 }
+
+
