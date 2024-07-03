@@ -3,6 +3,7 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class LoginPage extends BasePage {
@@ -23,8 +24,6 @@ public class LoginPage extends BasePage {
     @FindBy (css = "[href='registration']")
     WebElement registrationBtn;
 
-    @FindBy (css = "#userBadge.profile")
-    WebElement userBadge;
 
     public LoginPage providePassword(String password) {
         passwordField.sendKeys(password);
@@ -46,10 +45,6 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage isUserLoggedIn () {
-        Assert.assertEquals(true, userBadge.isDisplayed());
-        return this;
-    }
 
 
 }

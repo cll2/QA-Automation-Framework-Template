@@ -1,3 +1,4 @@
+import Pages.LandingPage;
 import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,8 +13,10 @@ public class LoginTests extends BaseTest {
     public void validLoginTest() {
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.logIn("chelsea.laurenson@testpro.io", "KoelQ@!!");
-        //loginPage.isUserLoggedIn();
+        LandingPage landingPage = new LandingPage(driver);
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
+        //Assert.assertTrue(landingPage.getUserAvatar().isDisplayed());
+
         System.out.println("Logged In Successfully");
 
     }

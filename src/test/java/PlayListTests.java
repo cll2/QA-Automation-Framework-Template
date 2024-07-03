@@ -2,19 +2,19 @@ import Pages.LandingPage;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
 
-public class Sprint1Tests extends BaseTest {
-    //Story: Create a new playlist
+public class PlayListTests extends BaseTest {
 
     @Test
     public void createANewPlaylist() {
 
         LoginPage loginPage = new LoginPage(driver);
         LandingPage landingPage = new LandingPage(driver);
-        loginPage.logIn("chelsea.laurenson@testpro.io", "KoelQ@!!");
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
         //loginPage.isUserLoggedIn();
         System.out.println("Logged In Successfully");
         landingPage.clickAddPlaylistPlusButton();
+        landingPage.clickAddNewPlaylistButton();
+        landingPage.nameNewPlayList("Sprint2test");
+        System.out.println("playlist size is now" + landingPage.getPlayListListSize());
     }
 }
-
-
