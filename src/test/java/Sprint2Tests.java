@@ -1,6 +1,6 @@
-import Pages.LandingPage;
-import Pages.LoginPage;
 import org.testng.Assert;
+import pages.LandingPage;
+import pages.LoginPage;
 import org.testng.annotations.Test;
 
 public class Sprint2Tests extends BaseTest {
@@ -17,6 +17,8 @@ public class Sprint2Tests extends BaseTest {
         landingPage.clickAllSongs();
         landingPage.likeFirstSongInAllSongs();
         landingPage.likeSecondSongInAllSongs();
+        System.out.println(landingPage.getFavoritesPlayListListSize());
+        Assert.assertTrue(landingPage.firstSongInFavoritesIsDisplayed());
 
     }
 

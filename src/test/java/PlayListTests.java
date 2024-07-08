@@ -1,5 +1,5 @@
-import Pages.LandingPage;
-import Pages.LoginPage;
+import pages.LandingPage;
+import pages.LoginPage;
 import org.testng.annotations.Test;
 
 public class PlayListTests extends BaseTest {
@@ -15,6 +15,6 @@ public class PlayListTests extends BaseTest {
         landingPage.clickAddPlaylistPlusButton();
         landingPage.clickAddNewPlaylistButton();
         landingPage.nameNewPlayList("Sprint2test");
-        System.out.println("playlist size is now" + landingPage.getPlayListListSize());
+
     }
 }
