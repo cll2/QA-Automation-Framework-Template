@@ -18,7 +18,9 @@ import org.testng.annotations.Parameters;
 
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
 
 public class BaseTest {
 
@@ -45,7 +47,7 @@ public class BaseTest {
     public static WebDriver pickBrowser(String browserName) throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         String gridURL = "http://192.168.254.65:4444";
-        switch(browserName){
+        switch (browserName) {
             case "firefox": //gradle clean test -DbrowserName=firefox
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -76,8 +78,8 @@ public class BaseTest {
                 //return driver = new RemoteWebDriver(URI.create(gridURL).toURL(), caps);
                 return new RemoteWebDriver(URI.create(gridURL).toURL(), caps);
 
-                //case "cloud":
-                //return lambdaTest();
+            case "cloud":
+                return lambdaTest();
 
             default:
                 WebDriverManager.chromedriver().setup();
@@ -87,6 +89,25 @@ public class BaseTest {
                 //return driver = new ChromeDriver(chromeOptions);
                 return new ChromeDriver(chromeOptions);
         }
+
+
+    }
+
+    public static WebDriver lambdaTest () throws MalformedURLException {
+        String hubURL = "https://hub.lambdatest.com/wd/hub";  //found on github
+
+        ChromeOptions browserOptions = new ChromeOptions();
+        browserOptions.setPlatformName("macOS Sonoma");
+        browserOptions.setBrowserVersion("126");
+        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+        ltOptions.put("username", "cll2");
+        ltOptions.put("accessKey", "FHu3fpjupo2UlV2o5dZZE2r29ufWTkPpIwtFTfFe3CIiS5z47x");
+        ltOptions.put("project", "Untitled");
+        ltOptions.put("selenium_version", "4.0.0");
+        ltOptions.put("w3c", true);
+        browserOptions.setCapability("LT:Options", ltOptions);
+
+        return new RemoteWebDriver(new URL(hubURL), browserOptions);
     }
         @BeforeMethod
         @Parameters({"BaseURL"})
