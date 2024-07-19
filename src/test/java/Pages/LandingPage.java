@@ -105,9 +105,9 @@ public class LandingPage extends BasePage {
         return this;
     }
 
-    public boolean firstSongInFavoritesIsDisplayed () {
+    /*public boolean firstSongInFavoritesIsDisplayed () {
         return firstSongInAllSongs;
-    }
+    } */
 
 
 

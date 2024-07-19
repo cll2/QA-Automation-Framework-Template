@@ -7,8 +7,8 @@ public class PlayListTests extends BaseTest {
     @Test
     public void createANewPlaylist() {
 
-        LoginPage loginPage = new LoginPage(driver);
-        LandingPage landingPage = new LandingPage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
+        LandingPage landingPage = new LandingPage(getDriver());
         loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
         //loginPage.isUserLoggedIn();
         System.out.println("Logged In Successfully");
