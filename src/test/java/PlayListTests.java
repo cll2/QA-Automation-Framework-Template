@@ -1,5 +1,5 @@
-import Pages.LandingPage;
-import Pages.LoginPage;
+import pages.LandingPage;
+import pages.LoginPage;
 import org.testng.annotations.Test;
 
 public class PlayListTests extends BaseTest {

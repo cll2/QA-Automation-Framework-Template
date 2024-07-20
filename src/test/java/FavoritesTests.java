@@ -1,6 +1,5 @@
-import Pages.LandingPage;
-import Pages.LoginPage;
-import org.testng.Assert;
+import pages.LandingPage;
+import pages.LoginPage;
 import org.testng.annotations.Test;
 
 public class FavoritesTests extends BaseTest {
