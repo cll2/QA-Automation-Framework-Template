@@ -44,6 +44,11 @@ public class LandingPage extends BasePage {
 
     @FindBy (css = " .virtual-scroller.scroller .item-container table.items tr:nth-child(1)")
     WebElement firstSongInFavoritesList;
+    @FindBy (css = "input[type = 'search']")
+    WebElement searchBar;
+    @FindBy (css = "a[href='#!/home']")
+    WebElement homeButton;
+
 
 
 
@@ -104,6 +109,21 @@ public class LandingPage extends BasePage {
     public boolean firstSongInFavoritesIsDisplayed() {
         return firstSongInAllSongs.isDisplayed();
     }
+
+    public LandingPage searchForArtist(String artist) {
+        searchBar.sendKeys(artist);
+        return this;
+    }
+
+    public void clickHomeButton() {
+        homeButton.click();
+    }
+    public void selectAnArtistFromHomePage() {
+        //not sure how to make this work consistently without knowing what artist will be displayed
+        //in a given child element?
+    }
+
+
 
 
 

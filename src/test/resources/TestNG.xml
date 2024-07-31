@@ -8,6 +8,7 @@
 <!--            <class name="LoginTests"/>-->
             <class name="BaseTest"/>
             <class name="Sprint2Tests"/>
+            <class name="Sprint6ArtistTests"/>
 <!--            <class name="PlayListTests"/>-->
         </classes>
     </test>
