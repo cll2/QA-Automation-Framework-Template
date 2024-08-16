@@ -44,7 +44,7 @@ public class Sprint8 {
                 .when()
                 .get("https://qa.koel.app/play/" + songId)
                 .then().statusCode(200).extract().response();
-        String responseBody = response.getBody().asString();
+        byte[] responseBody = response.getBody().asByteArray(); //.asString();
         System.out.println("Response body " + responseBody);
     }
 
