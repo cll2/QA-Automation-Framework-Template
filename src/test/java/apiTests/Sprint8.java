@@ -42,7 +42,7 @@ public class Sprint8 {
         Response response = given()
                 .spec(requestSpec).log().all()
                 .when()
-                .get("https://qa.koel.app/api/songs/" + songId + "/play")
+                .get("https://qa.koel.app/play/" + songId)
                 .then().statusCode(200).extract().response();
         String responseBody = response.getBody().asString();
         System.out.println("Response body " + responseBody);
