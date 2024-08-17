@@ -57,5 +57,24 @@ public class S6InfoPanelTests extends BaseTest {
         infoPanelPage.artistNameIsDisplayed();
     }
 
+    @Test
+    public void hideInfoPanel() {
+        LoginPage loginPage = new LoginPage(driver);
+        InfoPanelPage infoPanelPage = new InfoPanelPage(driver);
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
+        infoPanelPage.clickInfoToHidePanel();
+        infoPanelPage.infoPanelIsHidden();
+    }
+
+    @Test
+    public void unhideInfoPanel() {
+        LoginPage loginPage = new LoginPage(driver);
+        InfoPanelPage infoPanelPage = new InfoPanelPage(driver);
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
+        infoPanelPage.clickInfoToHidePanel();
+        infoPanelPage.clickInfoToUnhidePanel();
+        infoPanelPage.infoPanelIsUnHidden();
+    }
+
 
 }

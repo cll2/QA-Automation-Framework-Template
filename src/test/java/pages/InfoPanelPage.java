@@ -59,6 +59,32 @@ public class InfoPanelPage extends BasePage {
         Assert.assertFalse(artistNameSpanText.trim().isEmpty());
     }
 
+    @FindBy (css = "button.control.text-uppercase.active")
+    WebElement infoButtonPanelDisplayed;
+    @FindBy (css = "button.control.text-uppercase")
+    WebElement infoButtonPanelHidden;
+
+    public void clickInfoToHidePanel() {
+        infoButtonPanelDisplayed.click();
+    }
+
+    public void clickInfoToUnhidePanel() {
+        infoButtonPanelHidden.click();
+    }
+
+    //@FindBy (css = "#extra.text-secondary")
+    //WebElement hiddenInfoPanel;
+    //@FindBy (css = ".text-secondary.showing")
+    //WebElement unhiddenInfoPanel;
+    public void infoPanelIsHidden() {
+        Boolean infoPanelIsInvisible = wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#extra.text-secondary.showing")));
+        Assert.assertTrue(infoPanelIsInvisible);
+    }
+
+    public void infoPanelIsUnHidden() {
+        WebElement unhiddenInfoPanel = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#extra.text-secondary.showing")));
+        Assert.assertTrue(unhiddenInfoPanel.isDisplayed());
+    }
 
 
 
