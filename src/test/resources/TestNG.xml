@@ -7,8 +7,9 @@
         <classes>
             <class name="LoginTests"/>
             <class name="BaseTest"/>
-            <class name="Sprint2Tests"/>
-            <class name="Sprint6ArtistTests"/>
+            <class name="FavoritesTests"/>
+            <class name="ArtistsTests"/>
+            <class name="S6InfoPanelTests"/>
 <!--            <class name="PlayListTests"/>-->
         </classes>
     </test>

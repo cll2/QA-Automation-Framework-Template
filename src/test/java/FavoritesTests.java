@@ -3,7 +3,7 @@ import pages.LandingPage;
 import pages.LoginPage;
 import org.testng.annotations.Test;
 
-public class Sprint2Tests extends BaseTest {
+public class FavoritesTests extends BaseTest {
     //Story: Create a new playlist
 
 

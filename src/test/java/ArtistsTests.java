@@ -2,7 +2,7 @@ import org.testng.annotations.Test;
 import pages.LandingPage;
 import pages.LoginPage;
 
-public class Sprint6ArtistTests extends BaseTest {
+public class ArtistsTests extends BaseTest {
 
     @Test
     public void searchForArtist() {
