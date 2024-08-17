@@ -86,6 +86,19 @@ public class InfoPanelPage extends BasePage {
         Assert.assertTrue(unhiddenInfoPanel.isDisplayed());
     }
 
+    @FindBy (css = ".album-info button.shuffle.control")
+    WebElement albumShuffleBtn;
+    @FindBy (css = ".artist-info button.shuffle.control")
+    WebElement artistShuffleBtn;
+
+    public void clickShuffleAlbums() {
+        albumShuffleBtn.click();
+    }
+
+    public void clickShuffleArtists() {
+        artistShuffleBtn.click();
+    }
+
 
 
 }

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -53,13 +55,6 @@ public class LandingPage extends BasePage {
     WebElement searchBar;
     @FindBy (css = "a[href='#!/home']")
     WebElement homeButton;
-
-
-
-
-    /*public WebElement waitForElementToBeClickable(WebElement element) {
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }*/
 
     public LandingPage clickAddPlaylistPlusButton() {
         playListPlusBtn.click();
@@ -135,6 +130,12 @@ public class LandingPage extends BasePage {
     public void playFirstSongInAllSongs() {
         allSongsBtn.click();
         actions.doubleClick(firstSongInAllSongs).perform();
+    }
+
+    @FindBy (css = ".bars>img")
+    WebElement playingSongBars;
+    public void songIsPlaying() {
+        Assert.assertTrue(playingSongBars.isDisplayed());
     }
 
 

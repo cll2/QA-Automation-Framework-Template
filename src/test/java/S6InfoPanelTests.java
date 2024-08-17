@@ -1,3 +1,4 @@
+import io.cucumber.java.jv.Lan;
 import io.cucumber.java.sl.In;
 import org.testng.annotations.Test;
 import pages.InfoPanelPage;
@@ -74,6 +75,30 @@ public class S6InfoPanelTests extends BaseTest {
         infoPanelPage.clickInfoToHidePanel();
         infoPanelPage.clickInfoToUnhidePanel();
         infoPanelPage.infoPanelIsUnHidden();
+    }
+
+    @Test
+    public void shuffleByAlbum() {
+        LoginPage loginPage = new LoginPage(driver);
+        InfoPanelPage infoPanelPage = new InfoPanelPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
+        landingPage.playFirstSongInAllSongs();
+        infoPanelPage.clickAlbumTab();
+        infoPanelPage.clickShuffleAlbums();
+        landingPage.songIsPlaying();
+    }
+
+    @Test
+    public void shuffleByArtist() {
+        LoginPage loginPage = new LoginPage(driver);
+        InfoPanelPage infoPanelPage = new InfoPanelPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
+        landingPage.playFirstSongInAllSongs();
+        infoPanelPage.clickArtistTab();
+        infoPanelPage.clickShuffleArtists();
+        landingPage.songIsPlaying();
     }
 
 
