@@ -42,7 +42,19 @@ public class S6InfoPanelTests extends BaseTest {
         LandingPage landingPage = new LandingPage(driver);
         loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
         landingPage.playFirstSongInAllSongs();
+        //lyrics tab is the default tab already opened in info panel
         infoPanelPage.lyricsAreDisplayed();
+    }
+
+    @Test
+    public void artistNameDisplaysWhileSongPlaying() {
+        LoginPage loginPage = new LoginPage(driver);
+        InfoPanelPage infoPanelPage = new InfoPanelPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
+        landingPage.playFirstSongInAllSongs();
+        infoPanelPage.clickArtistTab();
+        infoPanelPage.artistNameIsDisplayed();
     }
 
 

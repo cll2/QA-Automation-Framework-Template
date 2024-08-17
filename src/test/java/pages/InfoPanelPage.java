@@ -25,9 +25,16 @@ public class InfoPanelPage extends BasePage {
     //@FindBy (css = "p.none.text-secondary>span")
     //WebElement lyrics;
 
+    @FindBy (css = "button#extraTabArtist")
+    WebElement artistTab;
+
 
     public void clickAlbumTab() {
         albumsTab.click();
+    }
+
+    public void clickArtistTab() {
+        artistTab.click();
     }
 
     public void albumNameIsDisplayed() {
@@ -45,6 +52,14 @@ public class InfoPanelPage extends BasePage {
         String lyricsSpanText = lyrics.getText();
         Assert.assertFalse(lyricsSpanText.trim().isEmpty());
     }
+
+    public void artistNameIsDisplayed() {
+        WebElement artistName = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#extraPanelArtist > article > h1 > span")));
+        String artistNameSpanText = artistName.getText();
+        Assert.assertFalse(artistNameSpanText.trim().isEmpty());
+    }
+
+
 
 
 }
