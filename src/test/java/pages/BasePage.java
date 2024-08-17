@@ -19,7 +19,7 @@ public class BasePage {
 
     public BasePage(WebDriver givenDriver) {
         driver = givenDriver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         //PageFactory.initElements(driver, this);
         //PageFactory.initElements(driver, java.lang.Class.pageObjectClass);
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 20), this);

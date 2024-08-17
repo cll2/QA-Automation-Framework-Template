@@ -22,6 +22,8 @@ public class InfoPanelPage extends BasePage {
     WebElement albumsTab;
     //@FindBy (css = "#extraPanelAlbum>article> h1>span")
     //WebElement albumNameSpan;
+    //@FindBy (css = "p.none.text-secondary>span")
+    //WebElement lyrics;
 
 
     public void clickAlbumTab() {
@@ -34,7 +36,15 @@ public class InfoPanelPage extends BasePage {
         Assert.assertFalse(albumNameSpanText.trim().isEmpty());
     }
 
+    public void albumCoverIsDisplayed() {
+        Assert.assertTrue(albumCover.isDisplayed());
+    }
 
+    public void lyricsAreDisplayed() {
+        WebElement lyrics = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p.none.text-secondary>span")));
+        String lyricsSpanText = lyrics.getText();
+        Assert.assertFalse(lyricsSpanText.trim().isEmpty());
+    }
 
 
 }

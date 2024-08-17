@@ -21,7 +21,28 @@ public class S6InfoPanelTests extends BaseTest {
         loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
         landingPage.playFirstSongInAllSongs();
         infoPanelPage.clickAlbumTab();
-        //infoPanelPage.albumNameIsDisplayed();
+        infoPanelPage.albumNameIsDisplayed();
+    }
+
+    @Test
+    public void albumCoverDisplaysWhileSongPlaying() {
+        LoginPage loginPage = new LoginPage(driver);
+        InfoPanelPage infoPanelPage = new InfoPanelPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
+        landingPage.playFirstSongInAllSongs();
+        infoPanelPage.clickAlbumTab();
+        infoPanelPage.albumCoverIsDisplayed();
+    }
+
+    @Test
+    public void lyricsDisplayWhileSongPlaying() {
+        LoginPage loginPage = new LoginPage(driver);
+        InfoPanelPage infoPanelPage = new InfoPanelPage(driver);
+        LandingPage landingPage = new LandingPage(driver);
+        loginPage.logIn("chelsea.laurenson@testpro.io", "Koelapp1!!");
+        landingPage.playFirstSongInAllSongs();
+        infoPanelPage.lyricsAreDisplayed();
     }
 
 
