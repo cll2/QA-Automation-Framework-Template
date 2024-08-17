@@ -3,11 +3,14 @@ package pages;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
 public class LandingPage extends BasePage {
+
+    Actions actions = new Actions(driver);
     public LandingPage (WebDriver givenDriver) {
         super(givenDriver);
     }
@@ -36,7 +39,9 @@ public class LandingPage extends BasePage {
     @FindBy (css = "[href='#!/songs']")
     WebElement allSongsBtn;
     @FindBy (css = "tr.song-item:nth-child(1) td.favorite")
-    WebElement firstSongInAllSongs;
+    WebElement firstSongInAllSongsHeartBtn;
+
+
     @FindBy (css = "tr.song-item:nth-child(2) td.favorite")
     WebElement secondSongInAllSongs;
     @FindBy (css = "[href='#!/favorites']")
@@ -92,7 +97,7 @@ public class LandingPage extends BasePage {
     }
 
     public LandingPage likeFirstSongInAllSongs() {
-        firstSongInAllSongs.click();
+        firstSongInAllSongsHeartBtn.click();
         return this;
     }
 
@@ -122,6 +127,16 @@ public class LandingPage extends BasePage {
         //not sure how to make this work consistently without knowing what artist will be displayed
         //in a given child element?
     }
+
+    //info panel helper methods
+    @FindBy (css = "tr.song-item:nth-child(1)")
+    WebElement firstSongInAllSongs;
+
+    public void playFirstSongInAllSongs() {
+        allSongsBtn.click();
+        actions.doubleClick(firstSongInAllSongs).perform();
+    }
+
 
 
 
