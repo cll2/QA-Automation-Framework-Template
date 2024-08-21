@@ -124,7 +124,7 @@ public class LandingPage extends BasePage {
     }
 
     //info panel helper methods
-    @FindBy (css = "tr.song-item:nth-child(1)")
+    @FindBy (css = "tr.song-item:nth-child(3)")
     WebElement firstSongInAllSongs;
 
     public void playFirstSongInAllSongs() {
@@ -136,6 +136,26 @@ public class LandingPage extends BasePage {
     WebElement playingSongBars;
     public void songIsPlaying() {
         Assert.assertTrue(playingSongBars.isDisplayed());
+    }
+
+    @FindBy (css = "")
+    List<WebElement> songsAlbum;
+
+    //get artist of currently playing song
+    @FindBy (css = "#queueWrapper > div > div > div.item-container > table > tr.song-item.playing > td.artist")
+    WebElement currentlyPlayingSongArtist;
+
+    //get artist of all children in song list
+    @FindBy (css = "#queueWrapper > div > div > div.item-container > table > tr > td.artist")
+    List<WebElement> artistsOfSongsShuffledByArtist;
+    public void songsAreShuffledByArtist() {
+        String currentArtist = currentlyPlayingSongArtist.getText().trim();
+
+        for (WebElement artistInList: artistsOfSongsShuffledByArtist) {
+            String artistElement = artistInList.getText().trim();
+            Assert.assertEquals(currentArtist, artistElement);
+        }
+
     }
 
 

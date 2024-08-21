@@ -101,4 +101,17 @@ public class InfoPanelPage extends BasePage {
 
 
 
+
+/*
+User should be able to shuffle order of playing songs on the info panel by album and artist:
+retrieve all song titles using 'WebElements'. Loop through the list and use 'getText()'
+to capture song titles before shuffling. After shuffling, retrieve the song titles again
+and use assertNotEquals() to ensure that the order of the list of titles before shuffling
+does not match the order of the list of titles after shuffling.
+ */
+
+    public void playingSongsIsShuffledByAlbum() {
+
+    }
+
 }

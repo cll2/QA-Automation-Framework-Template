@@ -99,6 +99,7 @@ public class S6InfoPanelTests extends BaseTest {
         infoPanelPage.clickArtistTab();
         infoPanelPage.clickShuffleArtists();
         landingPage.songIsPlaying();
+        landingPage.songsAreShuffledByArtist();
     }
 
 
