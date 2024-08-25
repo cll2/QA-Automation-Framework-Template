@@ -1,11 +1,9 @@
-import io.cucumber.java.jv.Lan;
-import io.cucumber.java.sl.In;
 import org.testng.annotations.Test;
 import pages.InfoPanelPage;
 import pages.LandingPage;
 import pages.LoginPage;
 
-public class S6InfoPanelTests extends BaseTest {
+public class InfoPanelTests extends BaseTest {
     /*
     Album name and cover should be displayed for a playing song
     Lyrics should be displayed for a playing song

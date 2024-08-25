@@ -57,11 +57,13 @@ public class LandingPage extends BasePage {
     WebElement homeButton;
 
     public LandingPage clickAddPlaylistPlusButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(playListPlusBtn));
         playListPlusBtn.click();
         return this;
     }
 
     public LandingPage nameNewPlayList(String playListName) {
+        wait.until(ExpectedConditions.elementToBeClickable(newPlayListField));
         newPlayListField.sendKeys(playListName);
         newPlayListField.sendKeys(Keys.RETURN);
         return this;
@@ -72,6 +74,7 @@ public class LandingPage extends BasePage {
     }*/
 
     public LandingPage clickAddNewPlaylistButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(newPlayListBtn));
         newPlayListBtn.click();
         return this;
     }
@@ -82,40 +85,48 @@ public class LandingPage extends BasePage {
     }
 
     public LandingPage clickHeartFirstRecentlyPlayedSongHomePage() {
+        wait.until(ExpectedConditions.elementToBeClickable(favoriteBtnFirstRecentlyPlayedSongOnHomePage));
         favoriteBtnFirstRecentlyPlayedSongOnHomePage.click();
         return this;
     }
 
     public LandingPage clickAllSongs() {
+        wait.until(ExpectedConditions.elementToBeClickable(allSongsBtn));
         allSongsBtn.click();
         return this;
     }
 
     public LandingPage likeFirstSongInAllSongs() {
+        wait.until(ExpectedConditions.elementToBeClickable(firstSongInAllSongsHeartBtn));
         firstSongInAllSongsHeartBtn.click();
         return this;
     }
 
     public LandingPage likeSecondSongInAllSongs() {
+        wait.until(ExpectedConditions.elementToBeClickable(secondSongInAllSongs));
         secondSongInAllSongs.click();
         return this;
     }
 
     public LandingPage clickFavoritesBtn() {
+        wait.until(ExpectedConditions.elementToBeClickable(favoritesbtn));
         favoritesbtn.click();
         return this;
     }
 
     public boolean firstSongInFavoritesIsDisplayed() {
+        wait.until(ExpectedConditions.visibilityOf(firstSongInAllSongs));
         return firstSongInAllSongs.isDisplayed();
     }
 
     public LandingPage searchForArtist(String artist) {
+        wait.until(ExpectedConditions.elementToBeClickable(searchBar));
         searchBar.sendKeys(artist);
         return this;
     }
 
     public void clickHomeButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(homeButton));
         homeButton.click();
     }
     public void selectAnArtistFromHomePage() {
@@ -128,13 +139,16 @@ public class LandingPage extends BasePage {
     WebElement firstSongInAllSongs;
 
     public void playFirstSongInAllSongs() {
+        wait.until(ExpectedConditions.elementToBeClickable(allSongsBtn));
         allSongsBtn.click();
+        wait.until(ExpectedConditions.elementToBeClickable(firstSongInAllSongs));
         actions.doubleClick(firstSongInAllSongs).perform();
     }
 
     @FindBy (css = ".bars>img")
     WebElement playingSongBars;
     public void songIsPlaying() {
+        wait.until(ExpectedConditions.visibilityOf(playingSongBars));
         Assert.assertTrue(playingSongBars.isDisplayed());
     }
 

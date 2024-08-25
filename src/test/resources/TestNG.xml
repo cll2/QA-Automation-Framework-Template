@@ -9,7 +9,7 @@
 <!--            <class name="BaseTest"/>-->
 <!--            class name="FavoritesTests"/>-->
 <!--            <class name="ArtistsTests"/>-->
-                <class name="S6InfoPanelTests"/>
+                <class name="InfoPanelTests"/>
 <!--            <class name="PlayListTests"/>-->
         </classes>
     </test>
