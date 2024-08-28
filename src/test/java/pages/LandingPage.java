@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -177,9 +178,12 @@ public class LandingPage extends BasePage {
     WebElement currentQueueBtn;
     @FindBy (css = ".btn-clear-queue")
     WebElement clearBtn;
-    //@FindBy (css = "div.text")
     @FindBy (xpath = "//*[@id='queueWrapper']/div/div/div")
     WebElement noSongsQueuedMessage;
+    @FindBy (css = ".start")
+    WebElement clearedQueueShuffleSongs;
+    @FindBy (css = "tr.song-item:nth-child(10)")
+    WebElement tenthSongInShuffleList;
 
     public void clickCurrentQueue() {
         wait.until(ExpectedConditions.elementToBeClickable(currentQueueBtn));
@@ -196,6 +200,12 @@ public class LandingPage extends BasePage {
         Assert.assertEquals(noSongsQueuedMessageString, expectedNoSongsQueuedMessage);
     }
 
+    public void shuffleSongsFromClearedQueue() {
+        wait.until(ExpectedConditions.elementToBeClickable(clearedQueueShuffleSongs));
+        clearedQueueShuffleSongs.click();
+        wait.until(ExpectedConditions.elementToBeClickable(tenthSongInShuffleList));
+        Assert.assertTrue(tenthSongInShuffleList.isDisplayed());
+    }
 
 
 

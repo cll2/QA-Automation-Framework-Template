@@ -14,7 +14,6 @@ public class RegressionTests extends BaseTest {
         landingPage.clickCurrentQueue();
         landingPage.clickClear();
         landingPage.noSongsQueuedIsDisplayed();
-
-
+        landingPage.shuffleSongsFromClearedQueue();
     }
 }
