@@ -9,7 +9,8 @@
 <!--            <class name="BaseTest"/>-->
 <!--            class name="FavoritesTests"/>-->
 <!--            <class name="ArtistsTests"/>-->
-                <class name="InfoPanelTests"/>
+<!--            <class name="InfoPanelTests"/>-->
+                <class name="RegressionTests"/>
 <!--            <class name="PlayListTests"/>-->
         </classes>
     </test>

@@ -172,6 +172,30 @@ public class LandingPage extends BasePage {
 
     }
 
+    //current queue
+    @FindBy (css = "a[href='#!/queue']")
+    WebElement currentQueueBtn;
+    @FindBy (css = ".btn-clear-queue")
+    WebElement clearBtn;
+    //@FindBy (css = "div.text")
+    @FindBy (xpath = "//*[@id='queueWrapper']/div/div/div")
+    WebElement noSongsQueuedMessage;
+
+    public void clickCurrentQueue() {
+        wait.until(ExpectedConditions.elementToBeClickable(currentQueueBtn));
+        currentQueueBtn.click();
+    }
+    public void clickClear() {
+        wait.until(ExpectedConditions.elementToBeClickable(clearBtn));
+        clearBtn.click();
+    }
+    String expectedNoSongsQueuedMessage = "No songs queued. How about shuffling all songs?";
+    public void noSongsQueuedIsDisplayed() {
+        wait.until(ExpectedConditions.visibilityOf(noSongsQueuedMessage));
+        String noSongsQueuedMessageString = noSongsQueuedMessage.getText().replaceAll("\\s+", " ").trim();
+        Assert.assertEquals(noSongsQueuedMessageString, expectedNoSongsQueuedMessage);
+    }
+
 
 
 
